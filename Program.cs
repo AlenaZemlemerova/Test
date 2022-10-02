@@ -1,20 +1,30 @@
 ﻿void Test()
 {
     string[] words = {"hello", "2", "world",":-)"};
+    Console.WriteLine("Начальный массив: ");
     PrintArray(words);
     int count = 0;
-    Console.WriteLine("Слова не более 3х символов:");
     for (int i = 0; i < words.Length; i++)
     {  
         if (words[i].Length <= 3)
         {                        
-            Console.Write(words[i] + " ");
             count++;                        
         }  
     }
-    Console.WriteLine();
     Console.WriteLine("Количество слов не более 3х символов: " + count);
-    
+
+    string[] finalArray = new string [count];
+    int index = 0;
+    for (int i = 0; i < words.Length; i++)
+    {  
+        if (words[i].Length <= 3)
+        {                      
+            finalArray[index] = words[i];
+            index++;                                   
+        }  
+    }
+    Console.WriteLine("Итоговый массив: ");
+    PrintArray(finalArray);    
 }
 
 void PrintArray(string[] array)
